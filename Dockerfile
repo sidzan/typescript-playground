@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:latest
 
-MAINTAINER Crazy Factory dev@crazy-factory.com
+MAINTAINER Sijan Shrestha <sijanshrestha2@gmail.com>
 
 WORKDIR /app
 ADD . .

@@ -185,7 +185,7 @@ This boilerplate is released under the [MIT license](LICENSE).
 
 ___
 
-## [Crazy Factory](https://www.crazy-factory.com/en-US/)
+## [BCHU Runway](https://www.crazy-factory.com/en-US/)
 
 Crazy factory is an online shop which manufactures piercings, jewellery, mobile covers, etc. **All at factory prices!**
 

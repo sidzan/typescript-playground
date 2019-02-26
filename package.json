@@ -46,7 +46,7 @@
     "lint:fix": "npm run lint -s -- --fix",
     "doc": "styleguidist server --config styleguide.config.js"
   },
-  "author": "Crazy Factory <dev@crazy-factory.com>",
+  "author": "BCHU Runway <developer@bchurunway.com>",
   "homepage": "https://github.com/crazyfactory/ts-react-boilerplate.git",
   "repository": {
     "type": "git",
