@@ -38,12 +38,12 @@ class Calendar extends React.Component<{}, IState> {
   }
 
   @autobind
-  private onDateChange(date: object): void {
+  private onDateChange(date: any): any {
     this.setState({date});
   }
 
   @autobind
-  private focus(focused: boolean): void {
+  private focus(focused: any): any {
     this.setState({focused});
   }
 
