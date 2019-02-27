@@ -106,7 +106,7 @@
       }
     ],
     "max-line-length": [
-      true,
+      false,
       120
     ],
     "member-access": true,
@@ -227,7 +227,10 @@
     "prefer-type-cast": false,
     "no-angle-bracket-type-assertion": true,
     "jsx-alignment": false,
-    "no-implicit-dependencies": [true, "dev"],
+    "no-implicit-dependencies": [
+      true,
+      "dev"
+    ],
     "no-submodule-imports": false
   }
 }

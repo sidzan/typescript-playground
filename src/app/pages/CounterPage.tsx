@@ -5,6 +5,7 @@ import {createSelector} from "reselect";
 import {stylesheet} from "typestyle";
 import {Button} from "../components/Button";
 import {Calendar} from "../components/Calendar";
+import {CSelect as Select} from "../components/CSelect";
 import {Translator} from "../models/Translator";
 import {ITranslator} from "../models/TranslatorInterfaces";
 import {IStore} from "../redux/IStore";
@@ -14,11 +15,13 @@ import {
 } from "../redux/modules/counterActionCreators";
 import {translationsSelector} from "../selectors/translationsSelector";
 
-const classNames = stylesheet({
-                                moveRight: {
-                                  marginLeft: "8px"
-                                }
-                              });
+const classNames = stylesheet(
+  {
+    moveRight: {
+      marginLeft: "8px"
+    }
+  }
+);
 
 interface IStateToProps {
   count: number;
@@ -51,6 +54,7 @@ class CounterPage extends React.Component<IProps> {
         </Button>
         <p>{count}</p>
         <Calendar/>
+        <Select/>
       </div>
     );
   }
