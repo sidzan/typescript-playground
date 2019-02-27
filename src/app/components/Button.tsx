@@ -14,8 +14,8 @@ const classNames = stylesheet({
     cursor: "not-allowed"
   },
   primary: {
-    backgroundColor: Color.BLUE,
-    border: `1px solid ${Color.BLUE}`,
+    backgroundColor: Color.BCHUPINK,
+    border: `1px solid ${Color.BCHUPINK}`,
     color: Color.WHITE,
     cursor: "pointer"
   },

@@ -2,10 +2,15 @@ import autobind from "autobind-decorator";
 import * as moment from "moment";
 import * as React from "react";
 import {SingleDatePicker} from "react-dates";
+import "react-dates/initialize";
 import {Button} from "./Button";
 
 interface IState {
   date: any;
+  focused: boolean;
+}
+
+interface IFocusObject {
   focused: boolean;
 }
 
@@ -24,11 +29,11 @@ class Calendar extends React.Component<{}, IState> {
     return (
       <div>
         <SingleDatePicker
-          date={this.state.date} // momentPropTypes.momentObj or null
-          onDateChange={this.onDateChange} // PropTypes.func.isRequired
-          focused={this.state.focused} // PropTypes.bool
-          onFocusChange={this.focus} // PropTypes.func.isRequired
-          id="bchu_calendar" // PropTypes.string.isRequired,
+          date={this.state.date}
+          onDateChange={this.onDateChange}
+          focused={this.state.focused}
+          onFocusChange={this.focus}
+          id="bchu_calendar"
         />
         <Button onClick={this.handleClick}>
           Save Date
@@ -43,8 +48,8 @@ class Calendar extends React.Component<{}, IState> {
   }
 
   @autobind
-  private focus(focused: any): any {
-    this.setState({focused});
+  private focus(focusedObject: IFocusObject): any {
+    this.setState({focused: focusedObject.focused});
   }
 
   @autobind
