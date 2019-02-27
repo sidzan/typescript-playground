@@ -8,12 +8,13 @@ import {ITranslator} from "../models/TranslatorInterfaces";
 import {IStore} from "../redux/IStore";
 import {translationsSelector} from "../selectors/translationsSelector";
 
-const classNames = stylesheet({
-                                container: {
-                                  color: Color.BLUE,
-                                  textAlign: "center"
-                                }
-                              });
+const classNames = stylesheet(
+  {
+    container: {
+      color: Color.BLUE,
+      textAlign: "center"
+    }
+  });
 
 interface IStateToProps {
   translations: {
