@@ -7,7 +7,11 @@ interface IState {
   options: any;
 }
 
-class CSelect extends React.Component<{}, IState> {
+interface IProps {
+  onChange?: () => void;
+}
+
+class CSelect extends React.Component<IProps, IState> {
   public state: IState = {
     options: [
       {value: "default", label: "default"}
@@ -22,13 +26,15 @@ class CSelect extends React.Component<{}, IState> {
 
   public render(): JSX.Element {
     const {selectedOption, options} = this.state;
+    const {...rest} = this.props;
     return (
       <div>
         Testing
         <Select
           value={selectedOption}
-          onChange={this.handleChange}
           options={options}
+          {...rest}
+
         />
       </div>
     );
