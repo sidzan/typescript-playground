@@ -15,6 +15,7 @@ import {HomePage} from "../pages/HomePage";
 import {StarsPage} from "../pages/StarsPage";
 import {IStore} from "../redux/IStore";
 import {translationsSelector} from "../selectors/translationsSelector";
+import {AppBar} from "./AppBar";
 import {Header} from "./Header";
 
 setupCss();
@@ -48,7 +49,9 @@ class App extends React.Component<IStateToProps> {
     return (
       <section className={classNames.container}>
         <Helmet {...appConfig.app.head}/>
-        <Header/>
+        <AppBar>
+          <Header/>
+        </AppBar>
         {segment && this.components[segment] ? React.createElement(this.components[segment]) : <div>{notFound}</div>}
       </section>
     );

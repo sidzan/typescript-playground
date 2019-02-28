@@ -77,7 +77,7 @@ module.exports = {
       </html>
     `
   ,
-  title: 'Crazy Components',
+  title: 'BCHU Components',
   resolver: require('react-docgen').resolver.findAllComponentDefinitions,
   propsParser: require('react-docgen-typescript').parse,
   components: './src/app/components/**/*.tsx',

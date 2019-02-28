@@ -3,29 +3,29 @@ import {classes, stylesheet} from "typestyle";
 import {Color} from "../constants/Color";
 
 const classNames = stylesheet({
-  button: {
-    outline: "none",
-    padding: "10px 25px"
-  },
-  disabled: {
-    backgroundColor: Color.GREY,
-    border: "none",
-    color: Color.WHITE,
-    cursor: "not-allowed"
-  },
-  primary: {
-    backgroundColor: Color.BLUE,
-    border: `1px solid ${Color.BLUE}`,
-    color: Color.WHITE,
-    cursor: "pointer"
-  },
-  secondary: {
-    backgroundColor: Color.WHITE,
-    border: `1px solid ${Color.GREY}`,
-    color: Color.GREY,
-    cursor: "pointer"
-  }
-});
+                                button: {
+                                  outline: "none",
+                                  padding: "10px 25px"
+                                },
+                                disabled: {
+                                  backgroundColor: Color.GREY,
+                                  border: "none",
+                                  color: Color.WHITE,
+                                  cursor: "not-allowed"
+                                },
+                                primary: {
+                                  backgroundColor: Color.BCHUPINK,
+                                  border: `1px solid ${Color.BCHUPINK}`,
+                                  color: Color.WHITE,
+                                  cursor: "pointer"
+                                },
+                                secondary: {
+                                  backgroundColor: Color.WHITE,
+                                  border: `1px solid ${Color.GREY}`,
+                                  color: Color.GREY,
+                                  cursor: "pointer"
+                                }
+                              });
 
 export type TButtonType = "primary" | "secondary";
 

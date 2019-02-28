@@ -42,6 +42,10 @@ var config = {
         loader: 'file-loader?name=fonts/[hash].[ext]'
       },
       {
+        test: /\.css$/,
+        loader: ['style-loader', 'css-loader']
+      },
+      {
         test: /\.(woff|woff2)(\?.*)?$/,
         loader: 'file-loader?name=fonts/[hash].[ext]'
       },

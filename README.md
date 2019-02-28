@@ -182,13 +182,3 @@ module.exports = {
 
 This boilerplate is based on [Vortigern](https://github.com/barbar/vortigern) and is heavily updated.
 This boilerplate is released under the [MIT license](LICENSE).
-
-___
-
-## [BCHU Runway](https://www.crazy-factory.com/en-US/)
-
-Crazy factory is an online shop which manufactures piercings, jewellery, mobile covers, etc. **All at factory prices!**
-
-You can contact us at [dev@crazy-factory.com](mailto:dev@crazy-factory.com)
-
-Be sure to check out available [jobs at Crazy](http://stackoverflow.com/jobs/companies/Crazy-Factory).

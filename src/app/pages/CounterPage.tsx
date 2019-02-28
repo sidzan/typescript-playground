@@ -4,6 +4,8 @@ import {Dispatch} from "redux";
 import {createSelector} from "reselect";
 import {stylesheet} from "typestyle";
 import {Button} from "../components/Button";
+import {Calendar} from "../components/Calendar";
+import {CSelect as Select} from "../components/CSelect";
 import {Translator} from "../models/Translator";
 import {ITranslator} from "../models/TranslatorInterfaces";
 import {IStore} from "../redux/IStore";
@@ -13,11 +15,13 @@ import {
 } from "../redux/modules/counterActionCreators";
 import {translationsSelector} from "../selectors/translationsSelector";
 
-const classNames = stylesheet({
-  moveRight: {
-    marginLeft: "8px"
+const classNames = stylesheet(
+  {
+    moveRight: {
+      marginLeft: "8px"
+    }
   }
-});
+);
 
 interface IStateToProps {
   count: number;
@@ -33,7 +37,8 @@ interface IDispatchToProps {
   increment: () => void;
 }
 
-export interface IProps extends IStateToProps, IDispatchToProps {}
+export interface IProps extends IStateToProps, IDispatchToProps {
+}
 
 class CounterPage extends React.Component<IProps> {
   public render(): JSX.Element {
@@ -48,6 +53,8 @@ class CounterPage extends React.Component<IProps> {
           {translations.increment}
         </Button>
         <p>{count}</p>
+        <Calendar/>
+        <Select/>
       </div>
     );
   }

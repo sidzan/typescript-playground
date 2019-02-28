@@ -34,7 +34,7 @@ interface IDispatchToProps {
 
 interface IOwnProps {
   name: string;
-  params?: {[key: string]: string | number};
+  params?: { [key: string]: string | number };
   options?: any;
 }
 

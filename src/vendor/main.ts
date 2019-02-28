@@ -5,3 +5,5 @@
  * Example:
  * require('./bootstrap/css/bootstrap.min.css');
  */
+import "react-dates/initialize";
+import "react-dates/lib/css/_datepicker.css";

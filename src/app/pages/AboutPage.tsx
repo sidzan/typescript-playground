@@ -2,7 +2,7 @@ import * as React from "react";
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
 import {createSelector} from "reselect";
-import {Button} from "../components/Button";
+import {MaterialButton} from "../components/MaterialButton";
 import {Translator} from "../models/Translator";
 import {ITranslator} from "../models/TranslatorInterfaces";
 import {IStore} from "../redux/IStore";
@@ -23,7 +23,8 @@ interface IDispatchToProps {
   setLanguage: (language: string) => void;
 }
 
-interface IProps extends IStateToProps, IDispatchToProps {}
+interface IProps extends IStateToProps, IDispatchToProps {
+}
 
 class AboutPage extends React.Component<IProps> {
   constructor(props: IStateToProps & IDispatchToProps) {
@@ -36,9 +37,9 @@ class AboutPage extends React.Component<IProps> {
     return (
       <div>
         <h3>{translations.aboutUs}: {language}</h3>
-        <Button onClick={this.handleLanguageChange}>
+        <MaterialButton onClick={this.handleLanguageChange}>
           {translations.change}
-        </Button>
+        </MaterialButton>
         <h4>{translations.currentLanguage}</h4>
       </div>
     );
