@@ -48,7 +48,7 @@ class AppBar extends React.Component<IProps> {
               <MenuIcon/>
             </IconButton>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap={true}>
-              Material-UI
+              Bchu Runway
             </Typography>
             <div className={classes.grow}/>
             {children}

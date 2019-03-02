@@ -9,21 +9,21 @@ import {IStore} from "../redux/IStore";
 import {translationsSelector} from "../selectors/translationsSelector";
 
 const classNames = stylesheet({
-  nav: {
-    $nest: {
-      ul: {
-        $nest: {
-          li: {
-            display: "inline",
-            padding: "5px"
-          }
-        },
-        listStyleType: "none",
-        padding: 0
-      }
-    }
-  }
-});
+                                nav: {
+                                  $nest: {
+                                    ul: {
+                                      $nest: {
+                                        li: {
+                                          display: "inline",
+                                          padding: "5px"
+                                        }
+                                      },
+                                      listStyleType: "none",
+                                      padding: 0
+                                    }
+                                  }
+                                }
+                              });
 
 interface IStateToProps {
   translations: {
@@ -42,6 +42,7 @@ class Header extends React.Component<IStateToProps> {
         <ul>
           <li><Link name="home">{translations.home}</Link></li>
           <li><Link name="about">{translations.aboutUs}</Link></li>
+          <li><Link name="deposit">Deposit</Link></li>
           <li><Link name="counter">{translations.counter}</Link></li>
           <li><Link name="stars">{translations.stars}</Link></li>
         </ul>
