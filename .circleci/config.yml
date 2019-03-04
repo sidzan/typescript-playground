@@ -1,5 +1,5 @@
 version: 2
-jobs:
+jobs:ggpu
   build:
     docker:
       - image: circleci/node:8
@@ -19,9 +19,9 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run: # run tests
-          name: Run Test and Coverage
-          command: |
-            ./cc-test-reporter before-build
-            npm run test:no-cache -- --maxWorkers=4
-            ./cc-test-reporter after-build --exit-code $?
+#      - run: # run tests
+#          name: Run Test and Coverage
+#          command: |
+#            ./cc-test-reporter before-build
+#            npm run test:no-cache -- --maxWorkers=4
+#            ./cc-test-reporter after-build --exit-code $?
