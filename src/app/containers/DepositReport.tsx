@@ -7,7 +7,6 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import autobind from "autobind-decorator";
 import * as React from "react";
-import {Button} from "../components/Button";
 import {Api} from "../sdk/Api";
 import {IDepositReport, ILines} from "../sdk/nodes/DepositReport";
 
@@ -40,6 +39,7 @@ interface IProps extends WithStyles<typeof styles> {
 
 interface IState {
   data: IDepositReport;
+  loading: boolean;
 }
 
 class DepositReport extends React.Component<IProps, IState> {
@@ -51,7 +51,8 @@ class DepositReport extends React.Component<IProps, IState> {
         deposit_totals: 0,
         deposit_vat: 0
       }
-    }
+    },
+    loading: true
   };
 
   constructor(props: IProps) {
@@ -63,12 +64,16 @@ class DepositReport extends React.Component<IProps, IState> {
   }
 
   public render(): JSX.Element {
+    if (this.state.loading) {
+      return (
+        <div>
+          Loading
+        </div>
+      );
+    }
     return (
       <div>
-        DepositReport
-        <Button onClick={this.loadData}>
-          Load Data
-        </Button>
+        <h1>Deposit Report</h1>
         {this.state.data ? this.renderData() : null}
       </div>
     );
@@ -145,9 +150,10 @@ class DepositReport extends React.Component<IProps, IState> {
     const sdk = Api.getInstance();
     const result = await sdk.depositReturn.getData();
     const {data} = result;
-    this.setState({data});
+    this.setState({data, loading: false});
   }
 }
+
 const connected = withStyles(styles)(DepositReport);
 
 export {connected as DepositReport};
