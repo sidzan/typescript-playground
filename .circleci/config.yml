@@ -29,9 +29,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh $SSH_USER@$SSH_HOST \<\< EOF
-              /bin/sh /root/jobs/office.sh
-            EOF
+            ssh $SSH_USER@$SSH_HOST "/root/jobs/office.sh"
   publish-latest:
     executor: docker-publisher
     steps:
