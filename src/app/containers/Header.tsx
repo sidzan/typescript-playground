@@ -43,6 +43,7 @@ class Header extends React.Component<IStateToProps> {
           <li><Link name="home">{translations.home}</Link></li>
           <li><Link name="about">{translations.aboutUs}</Link></li>
           <li><Link name="deposit">Deposit</Link></li>
+          <li><Link name="peak">Peak</Link></li>
           <li><Link name="counter">{translations.counter}</Link></li>
           <li><Link name="stars">{translations.stars}</Link></li>
         </ul>

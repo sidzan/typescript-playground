@@ -7,6 +7,7 @@ import {State as IRouteState} from "router5";
 import {stylesheet} from "typestyle";
 import {config as appConfig} from "../../../config";
 import {DepositReport} from "../containers/DepositReport";
+import {PeakMonthly} from "../containers/PeakMonthly";
 import {setupCss} from "../helpers/setupCss";
 import {Translator} from "../models/Translator";
 import {ITranslator} from "../models/TranslatorInterfaces";
@@ -38,11 +39,12 @@ interface IStateToProps {
 }
 
 class App extends React.Component<IStateToProps> {
-  private components: { [key: string]: React.ComponentClass | typeof DepositReport } = {
+  private components: { [key: string]: React.ComponentClass | typeof DepositReport | typeof PeakMonthly } = {
     about: AboutPage,
     counter: CounterPage,
     deposit: DepositReport,
     home: HomePage,
+    peak: PeakMonthly,
     stars: StarsPage
   };
 

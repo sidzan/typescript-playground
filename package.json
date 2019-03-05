@@ -130,6 +130,7 @@
     "isomorphic-fetch": "^2.2.1",
     "isomorphic-style-loader": "^5.0.1",
     "moment": "^2.24.0",
+    "numeral": "^2.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-dates": "^19.0.4",

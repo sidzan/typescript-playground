@@ -19,9 +19,11 @@ jobs:ggpu
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-#      - run: # run tests
-#          name: Run Test and Coverage
-#          command: |
-#            ./cc-test-reporter before-build
-#            npm run test:no-cache -- --maxWorkers=4
-#            ./cc-test-reporter after-build --exit-code $?
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - run:
+          name: Deploy Over SSH
+          command: |
+            ssh $SSH_USER@$SSH_HOST "touch /tmp/test.txt > "APPLE"

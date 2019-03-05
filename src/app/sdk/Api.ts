@@ -2,6 +2,7 @@ import {Client, IFetchRequest, Service} from "@crazyfactory/tinka";
 import {ContentTypeMiddleware} from "./middlewares/ContentTypeMiddleware";
 import {WrapMiddleware} from "./middlewares/WrapMiddleware";
 import {DepositReport} from "./nodes/DepositReport";
+import {PeakMonthly} from "./nodes/PeakMonthly";
 
 export class Api extends Service {
   private static instances: { [key: string]: Api } = {};
@@ -24,6 +25,10 @@ export class Api extends Service {
 
   public get depositReturn(): DepositReport {
     return new DepositReport(this.client);
+  }
+
+  public get peakMonthly(): PeakMonthly {
+    return new PeakMonthly(this.client);
   }
 
   private static setupMiddlewares(client: Client): Client {

@@ -8,6 +8,7 @@ const routes: IRoute[] = [
   {name: "about", path: "/about"},
   {name: "counter", path: "/counter"},
   {name: "deposit", path: "/deposit"},
+  {name: "peak", path: "/peak"},
   {name: "register", path: "/register"},
   {name: "stars", path: "/stars"}
 ];
