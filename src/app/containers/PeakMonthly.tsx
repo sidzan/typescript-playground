@@ -112,7 +112,7 @@ class PeakMonthly extends React.Component<IProps, IState> {
       return (
         <React.Fragment>
           <Paper className={classes.root}>
-            Total Count :{count}
+            Total Order Count :{count}
             <MaterialButton
               onClick={this.toggleDisplayDetails}
               disabled={this.state.loading}
