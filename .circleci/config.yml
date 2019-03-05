@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh $SSH_USER@$SSH_HOST << EOF
+            ssh $SSH_USER@$SSH_HOST \<\< EOF
               /bin/sh /root/jobs/office.sh
             EOF
   publish-latest:
@@ -66,6 +66,27 @@ jobs:
             docker tag $IMAGE_NAME:latest $IMAGE_NAME:$IMAGE_TAG
             docker push $IMAGE_NAME:latest
             docker push $IMAGE_NAME:$IMAGE_TAG
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - publish-latest:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+
 
   build-tags:
     jobs:
@@ -83,17 +104,3 @@ jobs:
               only: /^v.*/
             branches:
               ignore: /.*/
-  workflows:
-    version: 2
-    build-master:
-      jobs:
-        - build:
-            filters:
-              branches:
-                only: master
-        - publish-latest:
-            requires:
-              - build
-            filters:
-              branches:
-                only: master
