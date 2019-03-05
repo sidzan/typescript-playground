@@ -80,7 +80,7 @@ workflows:
               only: master
       - deploy:
           requires:
-            - build
+            - publish-latest
           filters:
             branches:
               only: master
