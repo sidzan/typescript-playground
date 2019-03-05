@@ -1,48 +1,38 @@
-version: 2.1
-executors:
-  docker-publisher:
-    docker:
-      - image: circleci/node:8
+version: 2
 jobs:
   build:
-    executor: docker-publisher
+    docker:
+      - image: circleci/node:8
     steps:
       - checkout
-      - setup_remote_docker
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Build Docker image
+          name: Setup Dependencies
+          command: npm install
+      - run:
+          name: Setup Code Climate test-reporter
           command: |
-            docker build -t $IMAGE_NAME:latest .
-      - run:
-          name: Archive Docker image
-          command: docker save -o image.tar $IMAGE_NAME
-      - persist_to_workspace:
-          root: .
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
           paths:
-            - ./image.tar
-  publish-latest:
-    executor: docker-publisher
+            - ./node_modules
+  deploy:
+    machine:
+      enabled: true
     steps:
-      - attach_workspace:
-          at: /tmp/workspace
-      - setup_remote_docker
       - run:
-          name: Load archived Docker image
-          command: docker load -i /tmp/workspace/image.tar
-      - run:
-          name: Publish Docker Image to Docker Hub
+          name: Deploy Over SSH
           command: |
-            echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker push $IMAGE_NAME:latest
+            ssh $SSH_USER@$SSH_HOST "touch /tmp/test2.txt > APPLE"
 workflows:
   version: 2
-  build-master:
+  build-and-deploy:
     jobs:
-      - build:
-          filters:
-            branches:
-              only: master
-      - publish-latest:
+      - build
+      - deploy:
           requires:
             - build
           filters:

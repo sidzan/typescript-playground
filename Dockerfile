@@ -1,12 +1,16 @@
-FROM mhart/alpine-node:latest
+#THIS IS NOT A PRODUCTION READY FILE
+FROM node:11
 
-MAINTAINER Sijan Shrestha <sijanshrestha2@gmail.com>
+# Create app directory
+WORKDIR /usr/src/app
 
-WORKDIR /app
-ADD . .
+COPY package*.json ./
 
 RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
+COPY . .
 EXPOSE 8889
 
 CMD ["npm", "run", "start:prod"]
