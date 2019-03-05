@@ -1,8 +1,8 @@
 version: 2.1
-  executors:
-    docker-publisher:
-      docker:
-          - image: circleci/node:8
+executors:
+  docker-publisher:
+    docker:
+      - image: circleci/node:8
 jobs:
   build:
     executor: docker-publisher
