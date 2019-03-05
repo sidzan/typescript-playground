@@ -1,8 +1,6 @@
 version: 2.1
 executors:
   docker-publisher:
-    environment:
-      IMAGE_NAME: sidzan/office
     docker:
       - image: circleci/node:8
 jobs:
