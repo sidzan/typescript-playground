@@ -20,7 +20,15 @@ export class Api extends Service {
   }
 
   public static getEndpoint(): string {
-    return "http://localhost:30000"; //tslint:disable-line
+    // tslint:disable-next-line
+    console.log("process.env", process.env);
+    if (process.env.NODE_ENV === "development") {
+      return "http://localhost:30000"; //tslint:disable-line
+    }
+    if (process.env.NODE_ENV === "production") {
+      return "http://office.bchurunway.com:9999";//tslint:disable-line
+    }
+    alert("NODE_ENV NOT SET");
   }
 
   public get depositReturn(): DepositReport {
