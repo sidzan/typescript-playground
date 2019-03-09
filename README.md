@@ -7,7 +7,7 @@ ___
 
 [![TypeScript](https://barbaruploads.s3.amazonaws.com/bicoz/typescript.png)](https://www.typescriptlang.org/)
 [![React](https://barbaruploads.s3.amazonaws.com/bicoz/react.png)](https://github.com/facebook/react)
-[![Redux](https://barbaruploads.s3.amazonaws.com/bicoz/redux.png)](https://github.com/reactjs/redux)
+[![Redux](https://barbaruploads.s3.amazonaws.com/bicoz/redux.png)](https://github.com/reactjs/redux) [![Greenkeeper badge](https://badges.greenkeeper.io/sidzan/typescript-playground.svg)](https://greenkeeper.io/)
 
 ## Libraries
 This boilerplate uses the following libraries and tools:
