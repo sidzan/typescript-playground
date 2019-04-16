@@ -108,7 +108,7 @@
     "typings-for-css-modules-loader": "^1.7.0",
     "url-loader": "^1.1.2",
     "validate-commit-msg": "^2.14.0",
-    "wallaby-webpack": "^3.9.13",
+    "wallaby-webpack": "^3.9.15",
     "webpack": "^4.29.5",
     "webpack-bundle-analyzer": "^3.0.4",
     "webpack-cli": "^3.2.3",
