@@ -133,7 +133,7 @@
     "numeral": "^2.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
-    "react-dates": "^20.0.0",
+    "react-dates": "^20.2.0",
     "react-dom": "^16.8.2",
     "react-helmet": "^5.2.0",
     "react-redux": "^6.0.1",
