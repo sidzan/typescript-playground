@@ -144,7 +144,7 @@
     "redux-router5": "^7.0.2",
     "redux-saga": "^1.0.1",
     "reselect": "^4.0.0",
-    "router5": "^7.0.2",
+    "router5": "^8.0.1",
     "serve-favicon": "^2.5.0",
     "style-loader": "^0.23.1",
     "typesafe-actions": "^3.1.0",
