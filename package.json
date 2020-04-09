@@ -135,7 +135,7 @@
     "react": "^16.8.2",
     "react-dates": "^20.0.0",
     "react-dom": "^16.8.2",
-    "react-helmet": "^5.2.0",
+    "react-helmet": "^6.0.0",
     "react-redux": "^6.0.1",
     "react-router5": "^7.1.0",
     "react-select": "^2.4.1",
